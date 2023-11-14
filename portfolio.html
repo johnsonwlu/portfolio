@@ -3,39 +3,51 @@
     <head>
         <title>Projects</title>
         <link rel="stylesheet" href="./portfolio.css">
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+            }
+
+            .project-container {
+                display: flex;
+                justify-content: space-around;
+                flex-wrap: wrap;
+            }
+
+            .project-box {
+                width: 30%;
+                border: 1px solid #ddd;
+                padding: 20px;
+                margin: 10px;
+                text-align: center;
+            }
+
+            .project-box a {
+                text-decoration: none;
+                color: #333;
+            }
+        </style>
     </head>
     <body>
-        <!DOCTYPE html> 
-<html>
-    <head>
-        <title>Welcome</title>
-        <link rel="stylesheet" href="./overview.css">
-    </head>
-    <div class="topnav">
-        <a class="active" href="#home">Home</a>
-        <a goto = "projects">Projects</a>
-        <a href="#Resume">Resume</a>
-        <a href="https://github.com/lu-wenhua">github</a>
-        <a href="#About me">About Me</a>
-        <a href ="contact">Contact</a>
-      </div>
-</html>
-        <h1 id = projects>Projects</h1>
-
-        <li>
-            <a href = "https://github.com/lu-wenhua/Stock_Tracker">Stock Tracker App
-            </a> 
-        </li>   
-
-        <li>
-            <a href = "https://github.com/lu-wenhua/Dog-Schedule-Care">Dog Schedule App
-            </a>
-        </li>
-    </body>
-
-    <body>
-        <html> 
-            <h1>Resume</h1>
-        </html>
+        <div class="topnav">
+            <a class="active" href="#home">Home</a>
+            <a href="Johnson Resume.pdf">Resume</a>
+            <a href="https://github.com/johnsonwlu">github</a>
+            <a href="#About me">About Me</a>
+            <a href="contact">Contact</a>
+        </div>
+        <h1 id="projects">Projects</h1>
+        
+        <div class="project-container">
+            <div class="project-box">
+                <a href="https://github.com/abigailMoraes/KnowlEdgePublic">KnowlEdge</a>
+            </div>
+            <div class="project-box">
+                <a href="https://github.com/johnsonwlu/Stock_Tracker">Stock Tracker App</a>
+            </div>
+            <div class="project-box">
+                <a href="https://github.com/johnsonwlu/League-of-Legends-Database">League of Legends Database</a>
+            </div>
+        </div>
     </body>
 </html>
