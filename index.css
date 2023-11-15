@@ -1,0 +1,133 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  background-color: #f9f9f9; /* Set page background to light gray */
+}
+
+.topnav {
+  overflow: hidden;
+  background-color: #333; /* Set topnav to dark gray */
+  height: 60px; /* Set the desired height */
+  display: flex;
+  align-items: center; /* Vertical alignment */
+}
+
+.topnav p {
+  margin-right: 20px; /* Add space between name and buttons */
+  display: block;
+  color: #f1f1f1; /* Set text color to white */
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+  line-height: 32px; /* Set the line height */
+}
+
+.topnav a {
+  display: block;
+  color: #f1f1f1; /* Set text color to white */
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+  line-height: 32px; /* Set the line height */
+}
+
+.topnav a.active {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.project-container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.project-box {
+  position: relative;
+  width: 30%;
+  border: 1px solid #ddd;
+  margin: 10px;
+  overflow: hidden; /* To contain the image within the box */
+  background-color: #666; /* Set initial background color to semi-dark gray */
+  transition: background-color 0.3s ease-in-out; /* Add smooth transition for background color */
+  text-decoration: none;
+
+}
+
+.project-box a {
+  text-decoration: none;
+  color: #333;
+  display: block; /* Make the anchor fill the entire box */
+  text-decoration: none;
+
+}
+
+.project-box img {
+  width: 100%;
+  height: auto;
+  display: block; /* Make the image fill the container */
+  transition: transform 0.3s ease-in-out; /* Add smooth transition for hover effect */
+}
+
+.project-box:hover {
+  background-color: #555; /* Change background color on hover to slightly darker gray */
+}
+
+.project-box:hover img {
+  transform: scale(1.1); /* Enlarge the image on hover */
+}
+
+.project-box .overlay-text {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: .5s ease;
+  background-color: #666; /* Set overlay background color to semi-dark gray */
+}
+
+.project-box:hover .overlay-text {
+  display: inline-block;
+  opacity: 1;
+  color: white;
+  top: 80%;
+}
+
+.overlay-text {
+  display: inline-block;
+  opacity: 1;
+  color: white;
+  top: 20%;
+}
+
+.project-box p {
+  padding: 20px;
+  text-decoration: none;
+}
+
+.heading {
+  margin-left: 2%; /* Move heading to the right */
+  color: #333; /* Set heading color to dark gray */
+}
+
+.self-description {
+  margin-left: 2%; /* Move paragraph to the right */
+  width: 60%; /* Limit width to 40% of the page */
+  box-sizing: border-box; /* Include padding and border in the total width */
+  color: #333; /* Set paragraph color to dark gray */
+}
+
+.box-name {
+  color: white;
+}
