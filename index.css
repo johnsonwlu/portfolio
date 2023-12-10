@@ -8,7 +8,7 @@ body::-webkit-scrollbar {
 }
 
 .scroll-prompt {
-  position: relative;
+  position: absolute;
   text-align: center;
   margin-top: 20px;
   color: #fff; 
@@ -16,8 +16,7 @@ body::-webkit-scrollbar {
 
 
 .bottom-middle {
-  position: absolute;
-  bottom: 40px; 
+  bottom: 90px; 
   left: 50%;
   transform: translateX(-50%);
 }
@@ -88,18 +87,23 @@ body::-webkit-scrollbar {
   box-sizing: border-box;
   color: white;
   scroll-snap-align: start;
+  position: relative;
 }
 
 .second-page {
   width: 100%;
   height: 100vh;
   scroll-snap-align: start;
+  position: relative;
+
 }
 
 .third-page {
   width: 100%;
   height: 100vh;
   scroll-snap-align: start;
+  position: relative;
+
 }
 
 .topnav a.active {
@@ -226,4 +230,3 @@ body::-webkit-scrollbar {
   object-fit: cover; 
   border-radius: 25px;
 }
-
