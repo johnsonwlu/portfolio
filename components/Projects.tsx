@@ -1,3 +1,5 @@
+import FadeIn from "./FadeIn";
+
 const projects = [
   {
     name: "KnowlEdge",
@@ -20,25 +22,28 @@ export default function Projects() {
   return (
     <section id="projects" className="py-24 px-6">
       <div className="mx-auto max-w-5xl">
-        <p className="mb-2 font-mono text-xs uppercase tracking-widest text-blue-500">Projects</p>
-        <p className="mb-12 text-sm text-zinc-500">Personal projects from my time at UBC.</p>
+        <FadeIn>
+          <p className="mb-2 font-mono text-xs uppercase tracking-widest text-blue-500">Projects</p>
+          <p className="mb-12 text-sm text-zinc-500">Personal projects from my time at UBC.</p>
+        </FadeIn>
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-3">
-          {projects.map((p) => (
-            <a
-              key={p.name}
-              href={p.href}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group block rounded-xl border border-zinc-800 bg-[#141414] p-6 transition-colors hover:border-zinc-600"
-            >
-              <p className="mb-2 font-medium text-white group-hover:text-blue-400 transition-colors">
-                {p.name}
-              </p>
-              <p className="text-sm leading-relaxed text-zinc-500">{p.description}</p>
-              <p className="mt-4 font-mono text-xs text-blue-500 opacity-0 transition-opacity group-hover:opacity-100">
-                View on GitHub →
-              </p>
-            </a>
+          {projects.map((p, i) => (
+            <FadeIn key={p.name} delay={i * 0.1}>
+              <a
+                href={p.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group block rounded-xl border border-zinc-800 bg-[#141414] p-6 transition-colors hover:border-zinc-600"
+              >
+                <p className="mb-2 font-medium text-white transition-colors group-hover:text-blue-400">
+                  {p.name}
+                </p>
+                <p className="text-sm leading-relaxed text-zinc-500">{p.description}</p>
+                <p className="mt-4 font-mono text-xs text-blue-500 opacity-0 transition-opacity group-hover:opacity-100">
+                  View on GitHub →
+                </p>
+              </a>
+            </FadeIn>
           ))}
         </div>
       </div>

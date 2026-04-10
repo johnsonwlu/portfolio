@@ -1,3 +1,5 @@
+import FadeIn from "./FadeIn";
+
 const experiences = [
   {
     company: "D3 Security",
@@ -52,38 +54,42 @@ export default function Experience() {
   return (
     <section id="experience" className="py-24 px-6">
       <div className="mx-auto max-w-5xl">
-        <p className="mb-12 font-mono text-xs uppercase tracking-widest text-blue-500">
-          Experience
-        </p>
+        <FadeIn>
+          <p className="mb-12 font-mono text-xs uppercase tracking-widest text-blue-500">
+            Experience
+          </p>
+        </FadeIn>
         <div className="space-y-14">
           {experiences.map((exp, i) => (
-            <div key={i} className="flex flex-col gap-4 sm:flex-row sm:gap-10">
-              <div className="w-44 flex-shrink-0">
-                <p className="font-mono text-xs text-zinc-500">{exp.period}</p>
-              </div>
-              <div className="flex-1 border-l border-zinc-800 pl-6">
-                <h3 className="text-base font-semibold text-white">{exp.role}</h3>
-                <p className="mb-3 text-sm text-blue-500">{exp.company}</p>
-                <div className="mb-4 flex flex-wrap gap-2">
-                  {exp.tech.map((t) => (
-                    <span
-                      key={t}
-                      className="rounded bg-zinc-800 px-2 py-0.5 font-mono text-xs text-zinc-400"
-                    >
-                      {t}
-                    </span>
-                  ))}
+            <FadeIn key={i} delay={i * 0.1}>
+              <div className="flex flex-col gap-4 sm:flex-row sm:gap-10">
+                <div className="w-44 flex-shrink-0">
+                  <p className="font-mono text-xs text-zinc-500">{exp.period}</p>
                 </div>
-                <ul className="space-y-2">
-                  {exp.bullets.map((b, j) => (
-                    <li key={j} className="flex gap-3 text-sm leading-relaxed text-zinc-400">
-                      <span className="mt-1.5 flex-shrink-0 text-blue-500">▸</span>
-                      {b}
-                    </li>
-                  ))}
-                </ul>
+                <div className="flex-1 border-l border-zinc-800 pl-6">
+                  <h3 className="text-base font-semibold text-white">{exp.role}</h3>
+                  <p className="mb-3 text-sm text-blue-500">{exp.company}</p>
+                  <div className="mb-4 flex flex-wrap gap-2">
+                    {exp.tech.map((t) => (
+                      <span
+                        key={t}
+                        className="rounded bg-zinc-800 px-2 py-0.5 font-mono text-xs text-zinc-400"
+                      >
+                        {t}
+                      </span>
+                    ))}
+                  </div>
+                  <ul className="space-y-2">
+                    {exp.bullets.map((b, j) => (
+                      <li key={j} className="flex gap-3 text-sm leading-relaxed text-zinc-400">
+                        <span className="mt-1.5 flex-shrink-0 text-blue-500">▸</span>
+                        {b}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
               </div>
-            </div>
+            </FadeIn>
           ))}
         </div>
       </div>
