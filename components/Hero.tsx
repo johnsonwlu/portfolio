@@ -1,14 +1,20 @@
 import FadeIn from "./FadeIn";
+import TypingText from "./TypingText";
 
 export default function Hero() {
   return (
     <section
       id="home"
-      className="flex min-h-screen flex-col items-center justify-center px-6 text-center"
+      className="relative flex min-h-screen flex-col items-center justify-center px-6 text-center"
     >
+      {/* Radial glow behind name */}
+      <div className="pointer-events-none absolute inset-0 flex items-center justify-center">
+        <div className="h-[400px] w-[600px] rounded-full bg-blue-600/10 blur-3xl" />
+      </div>
+
       <FadeIn delay={0}>
         <p className="mb-4 font-mono text-xs uppercase tracking-widest text-blue-500">
-          DevOps Engineer
+          <TypingText />
         </p>
       </FadeIn>
       <FadeIn delay={0.1}>

@@ -5,16 +5,14 @@ export default function About() {
   return (
     <section id="about" className="py-24 px-6">
       <div className="mx-auto flex max-w-5xl flex-col items-center gap-16 sm:flex-row">
-        <FadeIn delay={0}>
-          <div className="flex-shrink-0">
-            <Image
-              src="/images/profile.jpeg"
-              alt="Johnson Lu"
-              width={220}
-              height={220}
-              className="rounded-2xl object-cover"
-            />
-          </div>
+        <FadeIn delay={0} className="flex justify-center sm:justify-start sm:flex-shrink-0">
+          <Image
+            src="/images/profile.jpeg"
+            alt="Johnson Lu"
+            width={220}
+            height={220}
+            className="rounded-2xl object-cover"
+          />
         </FadeIn>
         <FadeIn delay={0.15}>
           <div>
