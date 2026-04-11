@@ -10,7 +10,7 @@ export default function Marquee() {
   return (
     <div className="border-y border-zinc-800 py-10">
       <p className="text-center font-mono text-xs uppercase tracking-widest text-zinc-600 mb-8">
-        Trusted by
+        Built for teams at
       </p>
       <div
         className="relative overflow-hidden"
