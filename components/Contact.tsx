@@ -6,7 +6,7 @@ export default function Contact() {
       <div className="mx-auto max-w-5xl">
         <FadeIn>
           <p className="mb-4 font-mono text-xs uppercase tracking-widest text-blue-500">Contact</p>
-          <h2 className="mb-10 text-2xl font-semibold text-white">Let&apos;s work together.</h2>
+          <h2 className="mb-10 text-2xl font-semibold text-white">Always happy to connect.</h2>
         </FadeIn>
         <FadeIn delay={0.1}>
           <div className="flex flex-col gap-4">
