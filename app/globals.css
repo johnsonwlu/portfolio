@@ -15,6 +15,7 @@ body {
   background-size: 28px 28px;
 }
 
+
 @keyframes marquee {
   0% { transform: translateX(0); }
   100% { transform: translateX(-12.5%); }
