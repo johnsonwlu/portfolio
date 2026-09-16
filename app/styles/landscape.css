@@ -1,0 +1,323 @@
+/* Immersive landscape edition. Original design: .design-backups/alpine-v1. */
+.immersive-hero {
+  position: relative;
+  isolation: isolate;
+  display: block;
+  min-height: 800px;
+  margin: 0 -6.82%;
+  padding: 100px 6% 150px;
+  overflow: hidden;
+}
+.scene-image {
+  position: absolute;
+  z-index: -4;
+  inset: -45px 0 -60px;
+  transform: translate3d(0, var(--scene-offset, 0px), 0);
+}
+.scene-image img {
+  object-fit: cover;
+  object-position: center 57%;
+  filter: saturate(0.72) brightness(1.08) blur(var(--scene-blur));
+  transform: scale(1.025);
+}
+.scene-wash {
+  position: absolute;
+  z-index: -3;
+  inset: 0;
+  background:
+    linear-gradient(90deg, #f6f5eff5 0%, #f6f5efe8 23%, #f6f5efa0 40%, #f6f5ef00 68%),
+    linear-gradient(
+      180deg,
+      #f6f5ef 0%,
+      #f6f5ef60 13%,
+      transparent 30%,
+      transparent 64%,
+      #f6f5efb0 88%,
+      #f6f5ef 100%
+    );
+}
+.scene-mist {
+  position: absolute;
+  z-index: -2;
+  pointer-events: none;
+  width: 85%;
+  height: 230px;
+  border-radius: 50%;
+  background: radial-gradient(ellipse, #f9faf4d9, #f9faf450 40%, transparent 70%);
+  filter: blur(28px);
+  opacity: var(--atmosphere);
+  animation: mist-drift 24s ease-in-out infinite alternate;
+}
+.mist-one {
+  top: 37%;
+  left: 18%;
+}
+.mist-two {
+  top: 65%;
+  left: -10%;
+  animation-delay: -12s;
+  animation-duration: 32s;
+}
+.immersive-hero .hero-copy {
+  position: relative;
+  z-index: 2;
+  width: 49%;
+}
+.immersive-hero h1 {
+  font-size: clamp(43px, 4.7vw, 76px);
+}
+.immersive-hero h1 em {
+  color: #607854;
+}
+.immersive-hero .intro {
+  color: #425243;
+}
+.immersive-hero .hero-footnote {
+  margin-top: 38px;
+}
+.scene-observations {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+.scene-observations .photo-point {
+  pointer-events: auto;
+  width: 34px;
+  height: 34px;
+  backdrop-filter: blur(7px);
+}
+.scene-observations .photo-point::after {
+  content: "";
+  position: absolute;
+  inset: -7px;
+  border: 1px solid #fffffa50;
+  border-radius: 50%;
+  animation: marker-breathe 5s ease-in-out infinite;
+}
+.scene-note {
+  position: absolute;
+  right: 7%;
+  bottom: 135px;
+  width: 310px;
+  padding: 19px 23px;
+  border: 1px solid #ffffff80;
+  border-radius: 3px;
+  background: #f6f5efe0;
+  backdrop-filter: blur(15px);
+}
+.scene-note p {
+  font:
+    italic 21px/1.4 Georgia,
+    serif;
+  margin-top: 8px;
+}
+.scene-note .small-label {
+  font-size: 8px;
+  letter-spacing: 1px;
+}
+.scene-toolbar {
+  position: absolute;
+  z-index: 3;
+  bottom: 35px;
+  left: 6%;
+  right: 6%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding-top: 18px;
+  border-top: 1px solid #6e816333;
+}
+.scene-credit {
+  font: 9px/1.6 monospace;
+  color: #4c5e46;
+}
+.scene-controls {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.atmosphere-control {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font: 10px monospace;
+}
+.atmosphere-control span {
+  min-width: 30px;
+}
+.atmosphere-control input {
+  accent-color: #566f48;
+  width: 85px;
+  cursor: pointer;
+  height: 25px;
+}
+.atmosphere-control input:focus-visible {
+  outline: 2px solid #a27840;
+  outline-offset: 4px;
+}
+.scene-controls .stillness {
+  border: 1px solid #c9d0bf;
+  min-height: 35px;
+  padding: 8px 14px;
+}
+.trail-divider {
+  position: relative;
+  margin-top: 10px;
+}
+.contact-section {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  margin: 0 -6.82%;
+  padding: 110px 6% 130px;
+}
+.closing-landscape {
+  position: absolute;
+  z-index: -2;
+  inset: 0;
+  opacity: 0.4;
+}
+.closing-landscape img {
+  object-fit: cover;
+  object-position: center 48%;
+  filter: blur(2px) saturate(0.55);
+}
+.closing-landscape::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(180deg, #f6f5ef, #f6f5ef90 30%, #f6f5ef70 70%, #f6f5ef),
+    linear-gradient(90deg, transparent, #f6f5efb0 40%, #f6f5efb0 60%, transparent);
+}
+.contact-section h2 em {
+  color: #607854;
+}
+@keyframes mist-drift {
+  from {
+    transform: translate3d(-5%, 0, 0) scale(1);
+  }
+  to {
+    transform: translate3d(9%, -20px, 0) scale(1.08);
+  }
+}
+@keyframes marker-breathe {
+  0%,
+  100% {
+    transform: scale(0.94);
+    opacity: 0.4;
+  }
+  50% {
+    transform: scale(1.12);
+    opacity: 0.85;
+  }
+}
+@media (max-width: 1000px) and (min-width: 761px) {
+  .immersive-hero {
+    margin-inline: -5.56%;
+    min-height: 770px;
+    padding-inline: 5%;
+  }
+  .immersive-hero .hero-copy {
+    width: 56%;
+  }
+  .immersive-hero h1 {
+    font-size: 48px;
+  }
+  .scene-note {
+    right: 5%;
+    width: 260px;
+    bottom: 140px;
+  }
+  .scene-note p {
+    font-size: 19px;
+  }
+  .contact-section {
+    margin-inline: -5.56%;
+  }
+}
+@media (max-width: 760px) {
+  .immersive-hero {
+    min-height: 960px;
+    padding: 45px 6% 400px;
+    margin-inline: -6.82%;
+  }
+  .immersive-hero .hero-copy {
+    width: 100%;
+  }
+  .immersive-hero h1 {
+    font-size: clamp(43px, 8.8vw, 67px);
+  }
+  .scene-image {
+    inset: 260px -28% -10px;
+  }
+  .scene-image img {
+    object-position: 62% center;
+  }
+  .scene-wash {
+    background: linear-gradient(
+      180deg,
+      #f6f5ef 0%,
+      #f6f5effa 25%,
+      #f6f5efc0 40%,
+      #f6f5ef15 59%,
+      transparent 72%,
+      #f6f5efd0 91%,
+      #f6f5ef 100%
+    );
+  }
+  .scene-observations {
+    top: 48%;
+    bottom: 140px;
+  }
+  .scene-observations .photo-point:nth-child(1) {
+    left: 65% !important;
+    top: 14% !important;
+  }
+  .scene-observations .photo-point:nth-child(2) {
+    left: 28% !important;
+    top: 42% !important;
+  }
+  .scene-observations .photo-point:nth-child(3) {
+    left: 85% !important;
+    top: 50% !important;
+  }
+  .scene-note {
+    bottom: 0;
+    left: 6%;
+    right: 6%;
+    width: auto;
+    padding: 15px 18px;
+  }
+  .scene-note p {
+    font-size: 19px;
+  }
+  .scene-toolbar {
+    bottom: 28px;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 14px;
+  }
+  .scene-controls {
+    justify-content: space-between;
+    gap: 10px;
+  }
+  .scene-credit {
+    font-size: 8px;
+  }
+  .mist-one {
+    top: 58%;
+  }
+  .mist-two {
+    top: 72%;
+  }
+  .contact-section {
+    padding: 85px 6% 105px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .scene-image {
+    transform: none;
+  }
+}
