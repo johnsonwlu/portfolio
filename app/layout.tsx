@@ -1,34 +1,18 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+import "./styles/landscape.css";
+import "./portfolio-content.css";
 
 export const metadata: Metadata = {
-  title: "Johnson Lu",
-  description: "DevOps Engineer focused on infrastructure, CI/CD, and GitOps.",
+  title: "Johnson Lu — Engineer by trade. Explorer by nature.",
+  description:
+    "Platform engineering, DevOps, software, and reliability. A personal portfolio by Johnson Lu, inspired by the outdoors.",
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        {children}
-      </body>
+      <body>{children}</body>
     </html>
   );
 }
