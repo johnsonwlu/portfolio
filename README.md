@@ -1,36 +1,53 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Johnson Lu — Portfolio
 
-## Getting Started
+A Next.js portfolio combining engineering experience with alpine photography.
 
-First, run the development server:
+## Local development
 
-```bash
+```sh
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open http://localhost:3000.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Where to make changes
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- `app/page.tsx` lists the page sections in display order and owns the shared stillness toggle.
+- `app/data/portfolio.ts` holds work experience, projects, and grouped skills.
+- `app/data/observations.ts` holds the landscape markers and their field notes.
+- `app/components/` contains a named component for each page section. `ProjectCard.tsx` renders a project; `ProjectArtwork.tsx` holds its decorative illustration.
+- `app/components/LandscapeHero.tsx` owns the mist slider and selected photo marker.
+- `app/components/ProjectsSection.tsx` owns project filtering and expansion.
+- `app/hooks/useSceneParallax.ts` handles scroll movement and respects stillness and reduced-motion settings.
+- `app/layout.tsx` contains page metadata and imports the stylesheets.
 
-## Learn More
+## Styles
 
-To learn more about Next.js, take a look at the following resources:
+The stylesheets load in this order:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+1. `app/globals.css`: shared colors, typography, page layout, and common elements.
+2. `app/styles/landscape.css`: panoramic hero, mist, photo controls, and closing landscape.
+3. `app/portfolio-content.css`: projects, experience, skills, and education.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Responsive rules live beside the corresponding stylesheet's desktop rules. Keep each CSS declaration on its own line, and use ordinary multiline JSX rather than compressed markup.
 
-## Deploy on Vercel
+## Formatting and verification
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```sh
+npm run format
+npm run format:check
+npm run lint
+npm run build
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Prettier keeps indentation and JSX attributes consistent. Long text strings and SVG path data may remain longer than the preferred line width to keep the content intact.
+
+## Images and saved design
+
+- `.design-backups/private-assets/IMG_9867.jpeg`: original photo, kept locally and excluded from Git because it contains location metadata.
+- `public/alpine-expanded.webp`: generated panoramic expansion.
+- `.design-backups/alpine-v1/`: saved first design and restore instructions.
+- `design/README.md`: content sources and image generation notes.
+
+The backup is intentionally excluded from formatting so it remains an exact snapshot.

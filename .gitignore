@@ -39,3 +39,7 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Private original photography (contains location metadata)
+.design-backups/private-assets/
+/public/IMG_9867.jpeg
